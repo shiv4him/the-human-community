@@ -325,12 +325,12 @@ footer{
       </p>
 
 
-     <form id="joinForm" action="https://formsubmit.co/Shiv4him@gmail.com" method="POST">
+    <form id="joinForm" action="https://formsubmit.co/Shiv4him@gmail.com" method="POST">
   <input type="hidden" name="_subject" value="New The Human Community Signup">
   <input id="email" name="email" type="email" placeholder="Your email address" required aria-label="Email address">
   <button class="primary" type="submit">I Want In</button>
 </form>
-
+      
       <div id="status" class="note">
         Provide your contact details if you want to be part of the community.
       </div>
@@ -359,36 +359,7 @@ footer{
 </div>
 
 
-<script>
 
-document.getElementById('joinForm').addEventListener('submit', function(e){
-
-  e.preventDefault();
-
-  const email = document.getElementById('email').value.trim();
-
-  if(!email) return;
-
-  const list = JSON.parse(
-   
-
-  if(!list.includes(email)){
-    list.push(email);
-  }
-
-  localStorage.setItem(
-    'thc_early_list',
-    JSON.stringify(list)
-  );
-
-  document.getElementById('status').textContent =
-    'You’re on the early list. Thank you for joining.';
-
-  document.getElementById('email').value = '';
-
-});
-
-</script>
 
 </body>
 </html>
