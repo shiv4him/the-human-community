@@ -370,8 +370,7 @@ document.getElementById('joinForm').addEventListener('submit', function(e){
   if(!email) return;
 
   const list = JSON.parse(
-    localStorage.getItem('thc_early_list') || '[]'
-  );
+   
 
   if(!list.includes(email)){
     list.push(email);
