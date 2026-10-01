@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Human Community</title>
+
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:light-dark(#f7f8f5,#0b0d0c);
+  --surface:light-dark(#ffffff,#141715);
+  --text:light-dark(#101411,#f3f6f2);
+  --muted:light-dark(#5e675f,#aeb8af);
+  --line:light-dark(#dce2db,#2c342e);
+  --accent:light-dark(#164b35,#6ee7a4);
+  --accentText:light-dark(#ffffff,#07120b);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;
+}
+
+#app{
+  min-height:100vh;
+  background-color:var(--bg);
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:5;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+
+nav{
+  max-width:1120px;
+  margin:auto;
+  padding:18px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-weight:800;
+  letter-spacing:-.03em;
+}
+
+nav a{
+  color:var(--muted);
+  text-decoration:none;
+  margin-left:22px;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:var(--text);
+}
+
+main{
+  max-width:1120px;
+  margin:auto;
+  padding:0 24px;
+}
+
+.hero{
+  min-height:76vh;
+  display:grid;
+  align-items:center;
+  padding:80px 0 70px;
+}
+
+.eyebrow{
+  color:var(--accent);
+  font-weight:750;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:12px;
+}
+
+h1{
+  font-size:clamp(48px,8vw,92px);
+  line-height:.94;
+  letter-spacing:-.065em;
+  max-width:900px;
+  margin:18px 0 28px;
+}
+
+.hero p{
+  font-size:clamp(18px,2.2vw,23px);
+  line-height:1.5;
+  color:var(--muted);
+  max-width:720px;
+}
+
+.hero-tagline{
+  font-weight:650;
+  color:var(--text) !important;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:34px;
+}
+
+button,
+.button{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:13px 20px;
+  font-weight:700;
+  font-size:15px;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+.primary{
+  background:var(--accent);
+  color:var(--accentText);
+  border-color:var(--accent);
+}
+
+.secondary{
+  background:var(--surface);
+  color:var(--text);
+}
+
+section{
+  padding:82px 0;
+  border-top:1px solid var(--line);
+}
+
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:start;
+}
+
+h2{
+  font-size:clamp(34px,5vw,58px);
+  line-height:1;
+  letter-spacing:-.05em;
+  margin:0 0 18px;
+}
+
+.lead{
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.7;
+}
+
+.manifesto{
+  font-size:clamp(24px,3vw,38px);
+  line-height:1.35;
+  letter-spacing:-.025em;
+}
+
+form{
+  display:flex;
+  gap:10px;
+  max-width:620px;
+  margin-top:24px;
+}
+
+input{
+  flex:1;
+  min-width:0;
+  padding:15px 17px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--surface);
+  color:var(--text);
+  font-size:15px;
+}
+
+.note{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:12px;
+}
+
+footer{
+  max-width:1120px;
+  margin:auto;
+  padding:35px 24px 60px;
+  color:var(--muted);
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+@media(max-width:760px){
+  nav a{
+    display:none;
+  }
+
+  .hero{
+    min-height:auto;
+    padding:70px 0;
+  }
+
+  .split{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:62px 0;
+  }
+
+  form{
+    flex-direction:column;
+  }
+
+  footer{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+<header>
+  <nav>
+    <div class="logo">The Human Community</div>
+
+    <div>
+      <a href="#join">Join</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" style="border-top:0">
+
+  <div>
+
+    <div class="eyebrow">
+      The Human Community
+    </div>
+
+    <h1>
+      Stage 0 — The Beginning.
+    </h1>
+
+    <p class="hero-tagline">
+      A Collective Calling To Shape A Better Future.
+    </p>
+
+    <p>
+      The Human Community is being built as a future organisation
+      where people can help others when they are able, and receive
+      help from the community when they need it. We are building
+      the foundation now — with complete transparency at every step.
+    </p>
+
+    <div class="actions">
+      <a class="button primary" href="#join">
+        Sign Up
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section>
+
+  <div class="manifesto">
+    “A community where you can be there for someone else —
+    and know that someone will be there for you when you need them.”
+  </div>
+
+</section>
+
+
+<section id="join">
+
+  <div class="split">
+
+    <div>
+
+      <div class="eyebrow">
+        Join The Community
+      </div>
+
+      <h2>
+        Be Part Of It.
+      </h2>
+
+    </div>
+
+
+    <div>
+
+      <p class="lead">
+        If you want to be part of The Human Community, provide your
+        contact details and stay connected. The idea is simple:
+        when you are able to help someone, you can — and when you
+        need help yourself, others can be there for you. We will
+        work with complete transparency about what we do, how we
+        operate, and how contributions are used.
+      </p>
+
+
+      <form id="joinForm">
+
+        <input
+          id="email"
+          type="email"
+          placeholder="Your email address"
+          required
+          aria-label="Email address"
+        >
+
+        <button class="primary" type="submit">
+          I Want In
+        </button>
+
+      </form>
+
+
+      <div id="status" class="note">
+        Provide your contact details if you want to be part of the community.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <span>
+    © 2026 The Human Community
+  </span>
+
+  <span>
+    Build. Learn. Serve. Explore.
+  </span>
+
+</footer>
+
+</div>
+
+
+<script>
+
+document.getElementById('joinForm').addEventListener('submit', function(e){
+
+  e.preventDefault();
+
+  const email = document.getElementById('email').value.trim();
+
+  if(!email) return;
+
+  const list = JSON.parse(
+    localStorage.getItem('thc_early_list') || '[]'
+  );
+
+  if(!list.includes(email)){
+    list.push(email);
+  }
+
+  localStorage.setItem(
+    'thc_early_list',
+    JSON.stringify(list)
+  );
+
+  document.getElementById('status').textContent =
+    'You’re on the early list. Thank you for joining.';
+
+  document.getElementById('email').value = '';
+
+});
+
+</script>
+
+</body>
+</html>
